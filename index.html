@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goal Tracker</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<div id="app-container">
+    <header>
+        <h1>TrackToSuccess</h1>
+        <div class="theme-toggle">
+            <button id="toggle-theme">Dark Mode</button>
+        </div>
+    </header>
+
+    <div id="content-container">
+        <div id="goal-tracking">
+            <h2>Goal Tracking</h2>
+            <div class="goal-input-section">
+                <input type="text" id="goal-input" placeholder="Enter your goal...">
+                <select id="priority-select">
+                    <option value="low">Low Priority</option>
+                    <option value="medium">Medium Priority</option>
+                    <option value="high">High Priority</option>
+                </select>
+                <button onclick="addGoal()">Add Goal</button>
+            </div>
+            <ul id="goal-list"></ul>
+            <div id="goal-counter">
+                <p>
+                    <strong>Completed:</strong> <span id="completed-count">0</span> |
+                    <strong>Pending:</strong> <span id="pending-count">0</span> |
+                    <strong>In Progress:</strong> <span id="in-progress-count">0</span>
+                </p>
+            </div>
+        </div>
+
+        <div id="calendar-planner-container">
+            <div id="calendar-planner">
+                <h2>Calendar Planner</h2>
+                <div id="date-picker-container">
+                    <input type="date" id="date-picker">
+                    <input type="text" id="event-description" placeholder="Enter event description...">
+                    <button onclick="addDateEvent()">Add Event</button>
+                </div>
+                <ul id="date-event-list"></ul>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 TrackToSuccess. All Rights Reserved.</p>
+        </footer>
+        
+        
+
+        
+        
+
+</div>
+
+<script src="index.js"></script>
+</body>
+</html>
+
+
+
+

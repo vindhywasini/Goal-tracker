@@ -1,0 +1,392 @@
+/* General Styling */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #fdfcfb, #e2d1c3);
+    color: #333;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: background 0.5s ease, color 0.5s ease; /* Smooth transition for dark mode */
+}
+
+/* Slide-in Animations */
+
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* App Container Animation */
+
+#app-container {
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-y: auto;
+    animation: fadeIn 1s ease; /* Fade-in effect */
+}
+
+/* Header */
+
+header {
+    width: 100%;
+    background: #037f24;
+    color: white;
+    padding: 0 20px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+.theme-toggle button {
+    background: white;
+    color: #010c17;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.theme-toggle button:hover {
+    background: #0056b3;
+    color: white;
+}
+
+/* Content Container */
+
+#content-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+}
+
+#content-container h2 {
+    font-size: 1.8em;
+    color: #121111;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Goal Tracking */
+
+#goal-tracking {
+    background: #fcfcfb00;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    animation: slideInFromLeft 1s ease; /* Slide-in from left */
+}
+
+.goal-input-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.goal-input-section input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+}
+
+.goal-input-section select,
+.goal-input-section button {
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.goal-input-section button {
+    background: #218838;
+    color: white;
+    border: none;
+    font-size: 1em;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.goal-input-section button:hover {
+    background: #d1090961;
+    transform: scale(1.1);
+}
+
+#goal-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    text-align: left;
+}
+
+#goal-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+#goal-list li:hover {
+    transform: scale(1.02);
+}
+
+/* Dark Mode */
+
+body.dark-mode {
+    background: #1e1e1e;
+    color: #f0f0f0;
+}
+
+body.dark-mode #app-container {
+    background: #2e2e2e;
+}
+body.dark-mode #content-container h2 {
+    color: #ffffff; 
+}
+body.dark-mode #calendar-planner h2 {
+    color: #ffffff; 
+}
+
+/* Calendar Planner */
+
+#calendar-planner-container {
+    background: #fcfcfb00; /* Transparent background */
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    animation: slideInFromRight 1s ease; /* Slide-in animation */
+}
+
+#calendar-planner {
+    width: 100%;
+    text-align: center;
+}
+
+#calendar-planner h2 {
+    font-size: 1.8em;
+    color: #00070e; /* Original dark text color */
+    margin-bottom: 20px;
+}
+
+#date-picker-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#date-picker-container input[type="date"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1em;
+    text-align: center;
+    background: white; /* Match input background */
+    color: #333; /* Ensure text is visible */
+}
+
+#date-picker-container input[type="text"] {
+    flex: 2;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1em;
+    background: white; /* Match input background */
+    color: #333; /* Ensure text is visible */
+}
+
+#date-picker-container button {
+    padding: 10px 20px;
+    background: #218838; /* Original green button color */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Add smooth transitions */
+}
+
+#date-picker-container button:hover {
+    background: #d1090961; /* Slightly darker green on hover */
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+#date-event-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 200px; /* Constrain height with scrolling */
+    overflow-y: auto;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+}
+
+#date-event-list li {
+    background: #ffffff; /* White background for event items */
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s; /* Smooth hover scaling */
+}
+
+#date-event-list li:hover {
+    transform: scale(1.02); /* Slight zoom effect on hover */
+}
+
+#date-event-list button {
+    background: #dc3545; /* Red delete button */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#date-event-list button:hover {
+    background: #c82333; /* Slightly darker red on hover */
+}
+
+
+/* Footer */
+footer {
+    background-color: #2c2f2d;
+    color: white;
+    text-align: center;
+    padding: 10px 30px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+    font-size: 0.9em;
+}
+
+/* Responsivness */
+
+@media screen and (max-width: 1024px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+    .goal-input-section input {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+    #content-container {
+        padding: 5px;
+    }
+    .goal-input-section {
+        flex-direction: column;
+    }
+    .goal-input-section input {
+        flex: unset;
+        width: 100%;
+    }
+    #calendar-planner-container {
+        padding: 15px;
+        margin: 15px auto;
+    }
+    #calendar-planner h2 {
+        font-size: 1.5em;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header h1 {
+        font-size: 1.2em;
+    }
+    .goal-input-section input,
+    .goal-input-section select,
+    .goal-input-section button {
+        width: 100%;
+    }
+    footer {
+        font-size: 0.8em;
+    }
+    #calendar-planner-container {
+        padding: 10px;
+        margin: 10px auto;
+    }
+    #calendar-planner h2 {
+        font-size: 1.2em;
+    }
+}
+    footer {
+        font-size: 0.8em;
+    }
+
